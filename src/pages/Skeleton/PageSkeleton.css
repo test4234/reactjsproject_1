@@ -1,0 +1,43 @@
+.page-skeleton-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.loading-icon {
+    width: 40px;            /* Make spinner smaller to avoid LCP issue */
+    height: 40px;
+    margin-bottom: 20px;
+    animation: fadeInOut 0.3s forwards;
+    /* Optional: Don't let spinner ever be LCP by keeping it small */
+    max-width: 40px;
+    max-height: 40px;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.loading-message-text {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #333;
+}
