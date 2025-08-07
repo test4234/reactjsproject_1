@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* In your global CSS (e.g., index.css or App.css) */
+
+html, body {
+    height: 100%; /* Ensures they take up full initial viewport height */
+    margin: 0;
+    padding: 0;
+    /* Optional: overflow-y: scroll; if you want to always show scrollbar */
+}
+
+#root {
+    min-height: 100vh; /* Changed from height: 100% to min-height: 100vh */
+    display: flex;
+    flex-direction: column;
+    /* Remove any explicit overflow settings here to let body/html scroll */
+}
