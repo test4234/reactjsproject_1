@@ -1,0 +1,17 @@
+@keyframes typing-dots {
+  0% { width: 0; }
+  33% { width: .5em; }
+  66% { width: 1em; }
+  100% { width: 1.5em; }
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

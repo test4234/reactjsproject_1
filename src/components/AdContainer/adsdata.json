@@ -1,0 +1,200 @@
+{
+  "navbarSettings": {
+    "textColor": "white",
+    "textSize": "text-sm",
+    "orderDeliveryTextSize": "text-base",
+    "orderDeliveryTextColor": "white",
+    "addressTextColor": "white",
+    "addressTextSize": "text-sm",
+    "arrowColor": "balck"
+  },
+  "headerBackground": {
+    "type": "color",
+    "value": "#084518"
+  },
+  "components": [
+    {
+      "component": "AdDisplay",
+      "adData": {
+        "type": "HorizontalBannerCarousel",
+        "banners": [
+          {
+            "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "altText": "Fresh Veggies & Fruits",
+            "linkUrl": "/categories/fresh-produce"
+          },
+          {
+            "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "altText": "Get 50% Off Your First Order",
+            "linkUrl": "/offers/new-user-deal"
+          },
+          {
+            "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "altText": "New Menu Items from The Spice Hub",
+            "linkUrl": "/restaurants/the-spice-hub/menu"
+          }
+        ],
+        "size": {
+          "height": "200px"
+        },
+        "autoScrollIntervalMs": 5000,
+        "styles": {
+          "wrapper": {
+            "margin": "0.5rem 0.5rem",
+            "padding": "0.5rem"
+          },
+          "container": {
+            "backgroundColor": "#f0f4f8"
+          },
+          "image": {
+            "borderRadius": "0px"
+          }
+        }
+      }
+    },
+    {
+      "component": "AdDisplay",
+      "adData": {
+        "type": "FullWidthStaticBanner",
+        "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+        "altText": "Biryani Feast - Buy One Get One Free!",
+        "linkUrl": "/offers/biryani-deal",
+        "size": {
+          "height": "500px"
+        },
+        "styles": {
+          "wrapper": {
+            "margin": "0rem",
+            "padding": "0rem"
+          },
+          "container": {
+            "borderRadius": "12px",
+            "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
+          }
+        }
+      }
+    },
+    {
+      "component": "AdDisplay",
+      "adData": {
+        "type": "CategoryIconGrid",
+        "categories": [
+          {
+            "iconUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "name": "Food",
+            "linkUrl": "/categories/food"
+          },
+          {
+            "iconUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "name": "Grocery",
+            "linkUrl": "/categories/grocery"
+          },
+          {
+            "iconUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "name": "Pharmacy",
+            "linkUrl": "/categories/pharmacy"
+          }
+        ],
+        "styles": {
+          "container": {
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #e2e8f0"
+          },
+          "categoryName": {
+            "fontSize": "14px"
+          },
+          "icon": {
+            "borderRadius": "50%"
+          }
+        }
+      }
+    },
+    {
+      "component": "AdDisplay",
+      "adData": {
+        "type": "ProductAdCard",
+        "product": {
+          "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+          "name": "Farmhouse Veg Pizza",
+          "brand": "Pizza Palace",
+          "price": "$12.99",
+          "originalPrice": "$17.00",
+          "rating": "4.5",
+          "reviewsCount": "124",
+          "linkUrl": "/products/veg-pizza-123"
+        },
+        "ctaText": "Order Now",
+        "label": "Featured",
+        "styles": {
+          "container": {
+            "borderColor": "#a7f3d0"
+          },
+          "price": {
+            "color": "#16a34a"
+          },
+          "image": {
+          
+          }
+        }
+      }
+    },
+    {
+      "component": "AdDisplay",
+      "adData": {
+        "type": "CategoryProductCarousel",
+        "title": "Trending Dishes Near You",
+        "items": [
+          {
+            "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "name": "Chicken Biryani",
+            "price": "$9.99",
+            "linkUrl": "/products/chicken-biryani-456"
+          },
+          {
+            "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "name": "Classic Cheeseburger",
+            "price": "$7.50",
+            "linkUrl": "/products/classic-cheeseburger-789"
+          },
+          {
+            "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "name": "Assorted Sushi Platter",
+            "price": "$15.00",
+            "linkUrl": "/products/sushi-platter-012"
+          },
+          {
+            "imageUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+            "name": "Spicy Tacos",
+            "price": "$8.75",
+            "linkUrl": "/products/spicy-tacos-345"
+          }
+        ],
+        "itemsPerView": 2.5,
+        "styles": {
+          "title": {
+            "color": "#1a202c"
+          }
+        }
+      }
+    },
+    {
+      "component": "AdDisplay",
+      "adData": {
+        "type": "VideoAdCard",
+        "videoUrl": "https://example.com/videos/promo-video.mp4",
+        "thumbnailUrl": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg",
+        "title": "Experience the Difference",
+        "description": "Watch how we prepare your food with love and care.",
+        "linkUrl": "https://example.com/about-us",
+        "ctaText": "Our Story",
+        "autoPlay": true,
+        "muted": true,
+        "loop": true,
+        "size": {
+          "width": "100%",
+          "height": "220px"
+        }
+      }
+    }
+  ]
+}

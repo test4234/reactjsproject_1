@@ -1,0 +1,1158 @@
+AdContainer Component: Comprehensive Documentation
+The AdContainer component is a flexible and highly customizable React component designed to render various types of advertisements within your application, particularly well-suited for dynamic content layouts like a food or grocery delivery app homepage. It reads configuration data to display different ad formats, each with extensive styling options.
+
+Table of Contents
+Introduction
+
+Core Concepts
+
+The adData Prop
+
+The styles Object
+
+Reusable UI Components
+
+AdImage
+
+AdLinkButton
+
+AdBadge
+
+How to Use AdContainer
+
+Integrating with homepageConfig.json
+
+Example App.jsx / Parent Component Usage
+
+Detailed Ad Type Documentation
+
+ProductAdCard
+
+RestaurantCardAd
+
+DealBundleAd
+
+HorizontalBannerCarousel
+
+CategoryProductCarousel
+
+ThemedPromoGrid
+
+ProductHighlightBanner
+
+FullWidthStaticBanner
+
+OfferTagStrip
+
+CategoryIconGrid
+
+VideoAdCard
+
+ReferralBanner
+
+BrandStripCarousel
+
+CoinsCashbackPromo
+
+CouponCodeBanner
+
+TopCategoryCTA
+
+ShoppableVideoAd
+
+GamifiedAd
+
+ScrollInterstitialCard
+
+StickyBottomBanner
+
+Tailwind CSS Custom Animations
+
+Best Practices & Tips
+
+1. Introduction
+The AdContainer component acts as a central dispatcher for rendering various ad formats. Instead of hardcoding each ad, you provide a adData object (typically from a JSON configuration like homepageConfig.json), and AdContainer intelligently selects and renders the appropriate sub-component for that ad type. This modular design allows for easy addition of new ad types and highly flexible content management.
+
+2. Core Concepts
+The adData Prop
+The AdContainer component accepts a single prop: adData. This object is the blueprint for the ad to be rendered. It must contain a type property, which AdContainer uses to determine which specific ad component to render. All other properties within adData are specific to that ad type.
+
+Example adData structure:
+
+{
+  "id": "unique_ad_id",
+  "component": "AdDisplay", // This tells the parent layout to render AdContainer
+  "adData": {
+    "id": "internal_ad_id",
+    "type": "FullWidthStaticBanner", // MANDATORY: Determines which ad component to render
+    "imageUrl": "https://example.com/banner.jpg",
+    "altText": "Promotional Banner",
+    "linkUrl": "#promo/banner",
+    "size": { "width": "full", "height": "auto" },
+    "styles": {
+      "container": { "borderRadius": "10px" },
+      "image": { "filter": "brightness(0.8)" }
+    }
+  }
+}
+
+The styles Object
+Almost every ad type component accepts a styles object within its adData. This object allows for deep customization of the ad's appearance using inline CSS-in-JS syntax. Each key within the styles object typically corresponds to a specific part of the ad (e.g., container, title, button, image).
+
+Example styles usage:
+
+// Inside an adData object
+"styles": {
+  "container": {
+    "backgroundColor": "#FFD700", // Gold background
+    "borderRadius": "15px",
+    "boxShadow": "0 8px 16px rgba(0,0,0,0.2)"
+  },
+  "title": {
+    "color": "#8B0000", // Dark red title
+    "fontSize": "2.2rem",
+    "fontFamily": "Georgia, serif" // Custom font
+  },
+  "button": {
+    "backgroundColor": "#FF4500", // Orange-red button
+    "color": "white",
+    "fontWeight": "bold"
+  }
+}
+
+Reusable UI Components
+AdContainer uses a few core, reusable components to maintain consistency and simplify development:
+
+AdImage
+Purpose: Renders an image, handles loading errors by displaying a placeholder, and ensures responsiveness.
+
+Props:
+
+src (string): The URL of the image.
+
+alt (string): Alt text for accessibility.
+
+className (string, optional): Tailwind CSS classes.
+
+onErrorText (string, optional, default: "Image not available"): Text for the placeholder if the image fails to load.
+
+style (object, optional): Inline CSS styles for the image container.
+
+AdLinkButton
+Purpose: A styled <a> tag that looks like a button, used for calls-to-action.
+
+Props:
+
+text (string): The text displayed on the button.
+
+href (string): The URL the button links to.
+
+className (string, optional): Tailwind CSS classes.
+
+newTab (boolean, optional, default: true): If true, opens the link in a new tab.
+
+style (object, optional): Inline CSS styles for the button.
+
+AdBadge
+Purpose: Displays a small badge, often used for labels like "Sponsored," "New," or "Limited Time."
+
+Props:
+
+text (string): The text for the badge.
+
+className (string, optional): Tailwind CSS classes.
+
+style (object, optional): Inline CSS styles for the badge.
+
+3. How to Use AdContainer
+Integrating with homepageConfig.json
+The AdContainer component is designed to be used with a configuration file (e.g., homepageConfig.json) that defines the layout and content of your homepage, including ads.
+
+Define Ad Data in JSON: For each ad you want to display, create an object in your homepageConfig.json array. This object should have:
+
+"component": "AdDisplay": This is a placeholder for your parent layout component (e.g., HomepageContentLayout.jsx) to know that this entry needs to be rendered by AdContainer.
+
+"adData": This nested object contains all the specific configuration for the ad, including its type and styles.
+
+Example homepageConfig.json snippet:
+
+[
+  {
+    "id": "my_first_ad",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "banner_sale_august",
+      "type": "FullWidthStaticBanner",
+      "imageUrl": "https://example.com/sale_banner.jpg",
+      "altText": "August Sale!",
+      "linkUrl": "#sale/august",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "backgroundColor": "#FFDDC1", "borderRadius": "10px" },
+        "image": { "filter": "grayscale(0.1)" }
+      }
+    }
+  },
+  {
+    "id": "my_second_ad",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "featured_pizza_place",
+      "type": "RestaurantCardAd",
+      "label": "New on App",
+      "restaurant": {
+        "name": "Pizza Palace",
+        "imageUrl": "https://example.com/pizza_palace.jpg",
+        "cuisine": "Italian",
+        "rating": 4.8
+      },
+      "offerText": "Free Delivery on first order!",
+      "ctaText": "Order Now",
+      "styles": {
+        "title": { "color": "#E74C3C" },
+        "button": { "backgroundColor": "#2ECC71" }
+      }
+    }
+  }
+]
+
+Example App.jsx / Parent Component Usage
+Your main application component or a layout component will read this JSON and iterate over it, rendering AdContainer for each entry where component is "AdDisplay".
+
+// HomepageContentLayout.jsx (Example)
+import React, { useEffect, useState } from 'react';
+import AdContainer from './AdContainer'; // Adjust path as needed
+
+// Assuming homepageConfig.json is imported or fetched
+import homepageConfig from './homepageConfig.json'; // Or fetch dynamically
+
+const HomepageContentLayout = () => {
+  const [contentData, setContentData] = useState([]);
+
+  useEffect(() => {
+    // In a real app, you might fetch this from an API
+    setContentData(homepageConfig);
+  }, []);
+
+  return (
+    <div className="container mx-auto p-4">
+      {contentData.map((item, index) => {
+        if (item.component === "AdDisplay") {
+          return (
+            <AdContainer key={item.id || index} adData={item.adData} />
+          );
+        }
+        // Handle other components if you have them (e.g., ProductsFetch)
+        return null;
+      })}
+    </div>
+  );
+};
+
+export default HomepageContentLayout;
+
+4. Detailed Ad Type Documentation
+Each ad type has specific adData properties it expects and a styles object that allows for granular customization.
+
+ProductAdCard
+Purpose: Displays a single product with its image, name, price, and optional details like brand, original price, discount, and rating.
+
+adData Properties:
+
+id (string): Unique identifier for the ad.
+
+type (string): "ProductAdCard"
+
+label (string, optional): Text for a badge (e.g., "Sponsored", "Hot Deal").
+
+product (object, required):
+
+name (string): Product name.
+
+imageUrl (string): URL of the product image.
+
+linkUrl (string): URL to the product page.
+
+price (string): Current price (e.g., "$12.99").
+
+brand (string, optional): Product brand.
+
+originalPrice (string, optional): Original price for discount display.
+
+discount (string, optional): Discount percentage or amount (e.g., "20%").
+
+rating (number, optional): Product rating (e.g., 4.5).
+
+reviewsCount (number, optional): Number of reviews.
+
+ctaText (string, optional, default: "Shop Now"): Text for the call-to-action button.
+
+styles (object, optional):
+
+container: Styles for the main card container.
+
+badge: Styles for the AdBadge component.
+
+image: Styles for the AdImage component.
+
+contentArea: Styles for the div containing text content.
+
+title: Styles for the product name.
+
+brand: Styles for the brand text.
+
+price: Styles for the current price.
+
+originalPrice: Styles for the original price (strike-through).
+
+discount: Styles for the discount text.
+
+ratingArea: Styles for the rating and reviews container.
+
+ratingText: Styles for the rating text.
+
+reviewsCount: Styles for the reviews count text.
+
+button: Styles for the AdLinkButton.
+
+RestaurantCardAd
+Purpose: Promotes a single restaurant with its details and an offer.
+
+adData Properties:
+
+id (string): Unique identifier for the ad.
+
+type (string): "RestaurantCardAd"
+
+label (string, optional): Text for a badge (e.g., "New on App", "Featured").
+
+restaurant (object, required):
+
+name (string): Restaurant name.
+
+imageUrl (string): URL of the restaurant's main image.
+
+linkUrl (string): URL to the restaurant's page.
+
+cuisine (string, optional): Cuisine type (e.g., "Italian", "Indian").
+
+rating (number, optional): Restaurant rating.
+
+reviewsCount (number, optional): Number of reviews.
+
+deliveryTime (string, optional): Estimated delivery time (e.g., "30-45 min").
+
+deliveryFee (string, optional): Delivery fee (e.g., "Free", "$2.99").
+
+offerText (string, optional): Special offer text (e.g., "Flat 20% off").
+
+ctaText (string, optional, default: "Order Now"): Text for the call-to-action button.
+
+styles (object, optional):
+
+container: Main card container.
+
+badge: AdBadge styles.
+
+image: AdImage styles.
+
+contentArea: Text content area.
+
+title: Restaurant name.
+
+cuisine: Cuisine text.
+
+infoArea: Container for rating, time, fee.
+
+ratingText: Rating text.
+
+deliveryTime: Delivery time text.
+
+deliveryFee: Delivery fee text.
+
+offerText: Offer text.
+
+button: AdLinkButton styles.
+
+DealBundleAd
+Purpose: Highlights a special deal or bundle offer.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "DealBundleAd"
+
+label (string, optional): Badge text (e.g., "Limited Time Offer").
+
+imageUrl (string): Image for the deal bundle.
+
+title (string): Title of the deal (e.g., "Family Feast Bundle").
+
+description (string, optional): Short description.
+
+price (string): Current price of the bundle.
+
+originalPrice (string, optional): Original price for comparison.
+
+offerDetails (array of strings, optional): List of bullet points detailing the offer.
+
+linkUrl (string): URL to the deal page.
+
+ctaText (string, optional, default: "View Deal"): CTA button text.
+
+styles (object, optional):
+
+container: Main card container.
+
+badge: AdBadge styles.
+
+image: AdImage styles.
+
+contentArea: Text content area.
+
+title: Deal title.
+
+description: Deal description.
+
+price: Current price.
+
+originalPrice: Original price.
+
+offerDetailsList: <ul> for offer details.
+
+offerDetailItem: <li> for each offer detail.
+
+button: AdLinkButton styles.
+
+HorizontalBannerCarousel
+Purpose: Displays a horizontally scrolling carousel of full-width banners, often used for rotating promotions.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "HorizontalBannerCarousel"
+
+banners (array of objects, required):
+
+imageUrl (string): URL of the banner image.
+
+altText (string): Alt text for the banner.
+
+linkUrl (string): URL the banner links to.
+
+size (object, optional):
+
+width (string, default: "100%"): Width of the carousel.
+
+height (string, default: "auto"): Height of the carousel.
+
+autoScrollIntervalMs (number, optional): Interval in milliseconds for auto-scrolling. If not provided, carousel is static.
+
+styles (object, optional):
+
+container: Main carousel container.
+
+image: AdImage styles for each banner.
+
+navButton: Styles for the previous/next navigation buttons.
+
+dotIndicator: Styles for the pagination dots.
+
+activeColor: Color for the active dot.
+
+inactiveColor: Color for inactive dots.
+
+CategoryProductCarousel
+Purpose: Displays a horizontally scrollable carousel of smaller cards, ideal for categories, product groupings, or collections (e.g., "Summer Fruits," "Cooking Essentials").
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "CategoryProductCarousel"
+
+title (string, optional): Title for the carousel section.
+
+items (array of objects, required):
+
+name (string): Item name (e.g., "Mangoes", "Cooking Essentials").
+
+imageUrl (string): URL of the item's image.
+
+linkUrl (string): URL the item links to.
+
+price (string, optional): Price of the item (e.g., "$3.99/kg").
+
+itemsPerView (number, optional, default: 2): Number of items visible (partially or fully) at once. Can be a float (e.g., 2.5 to show 2 full and 1 half item).
+
+itemSize (object, optional):
+
+width (string, default: "140px"): Width of each item card.
+
+height (string, default: "170px"): Height of each item card.
+
+imageSize (object, optional):
+
+width (string, default: "100%"): Width of the image within the card.
+
+height (string, default: "90px"): Height of the image within the card.
+
+styles (object, optional):
+
+container: Main carousel container.
+
+title: Styles for the carousel section title.
+
+carouselTrack: Styles for the scrollable track containing items.
+
+itemCard: Styles for each individual item card.
+
+itemImage: Styles for the AdImage within each card.
+
+itemName: Styles for the item name.
+
+itemPrice: Styles for the item price.
+
+navButtonLeft: Styles for the left scroll button.
+
+navButtonRight: Styles for the right scroll button.
+
+ThemedPromoGrid
+Purpose: Displays a grid of themed categories or stores, often used for seasonal events or large sales (e.g., "Raksha Bandhan," "Big Sale").
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "ThemedPromoGrid"
+
+mainTitle (string, optional): Main title for the promotion (e.g., "Get Ready for").
+
+subtitle (string, optional): Subtitle for the promotion (e.g., "Raksha Bandhan").
+
+categories (array of objects, required):
+
+name (string): Category/store name (e.g., "Rakhi Store").
+
+imageUrl (string): URL of the category/store image.
+
+linkUrl (string): URL the category/store links to.
+
+offerText (string, optional): Specific offer for this category (e.g., "Upto 50% Off").
+
+imageSize (object, optional):
+
+width (string, default: "120px"): Width of category images.
+
+height (string, default: "120px"): Height of category images.
+
+poweredBy (string, optional): Text indicating a sponsor (e.g., "Cadbury").
+
+styles (object, optional):
+
+container: Main grid container.
+
+mainTitle: Styles for the main title.
+
+subtitle: Styles for the subtitle.
+
+categoryCard: Styles for each individual category card.
+
+categoryImage: Styles for the AdImage within each card.
+
+categoryName: Styles for the category name.
+
+categoryOffer: Styles for the offer text on the category card.
+
+poweredBy: Styles for the "Powered by" text.
+
+poweredByBrand: Styles for the brand name in "Powered by".
+
+ProductHighlightBanner
+Purpose: A prominent banner to highlight a single product, meal kit, or special offer with a clear call-to-action.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "ProductHighlightBanner"
+
+imageUrl (string): Background image for the banner.
+
+altText (string, optional): Alt text for the image.
+
+title (string, optional): Main title of the highlight (e.g., "Meals in Minutes").
+
+subtitle (string, optional): Subtitle or offer text (e.g., "UP TO 35% OFF").
+
+linkUrl (string): URL the banner links to.
+
+ctaText (string, optional, default: "Order now"): CTA button text.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the banner.
+
+height (string, default: "auto"): Height of the banner.
+
+styles (object, optional):
+
+container: Main banner container.
+
+innerContainer: Inner flex container for content and image.
+
+image: AdImage styles for the background.
+
+overlay: Styles for the gradient overlay on the image (for text readability).
+
+contentArea: Styles for the text content area.
+
+title: Styles for the main title.
+
+subtitle: Styles for the subtitle/offer.
+
+button: AdLinkButton styles.
+
+FullWidthStaticBanner
+Purpose: A simple, static banner that spans the full width, typically used for general announcements or brand imagery.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "FullWidthStaticBanner"
+
+imageUrl (string): URL of the banner image.
+
+altText (string): Alt text for the banner.
+
+linkUrl (string): URL the banner links to.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the banner.
+
+height (string, default: "auto"): Height of the banner.
+
+styles (object, optional):
+
+container: Main banner container.
+
+image: AdImage styles.
+
+OfferTagStrip
+Purpose: A compact strip displaying a special offer, often with a coupon code and a call-to-action.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "OfferTagStrip"
+
+offerText (string): The main offer message.
+
+couponCode (string, optional): A coupon code to display.
+
+linkUrl (string, optional): URL for the CTA.
+
+ctaText (string, optional, default: "Claim Now"): CTA button text.
+
+size (object, optional):
+
+width (string, default: "auto"): Width of the strip.
+
+height (string, default: "auto"): Height of the strip.
+
+styles (object, optional):
+
+container: Main strip container.
+
+offerText: Styles for the offer message.
+
+couponCode: Styles for the coupon code display.
+
+button: AdLinkButton styles.
+
+CategoryIconGrid
+Purpose: Displays a grid of category icons, allowing users to quickly navigate to different sections.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "CategoryIconGrid"
+
+categories (array of objects, required):
+
+name (string): Category name.
+
+iconUrl (string): URL of the category icon.
+
+linkUrl (string): URL the category links to.
+
+iconSize (object, optional):
+
+width (string, default: "70px"): Width of the icon image.
+
+height (string, default: "70px"): Height of the icon image.
+
+styles (object, optional):
+
+container: Main grid container.
+
+categoryItem: Styles for each individual category item.
+
+icon: Styles for the AdImage icon.
+
+categoryName: Styles for the category name text.
+
+VideoAdCard
+Purpose: Embeds a video advertisement.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "VideoAdCard"
+
+videoUrl (string): URL of the video file (e.g., .mp4).
+
+thumbnailUrl (string, optional): URL for the video poster image.
+
+title (string, optional): Title for the video ad.
+
+description (string, optional): Short description for the video.
+
+linkUrl (string, optional): URL for a CTA button.
+
+ctaText (string, optional, default: "Learn More"): CTA button text.
+
+size (object, optional):
+
+width (string, default: "320px"): Width of the video player.
+
+height (string, default: "auto"): Height of the video player.
+
+controls (boolean, optional, default: true): Show video controls.
+
+autoPlay (boolean, optional, default: false): Autoplay video.
+
+muted (boolean, optional, default: false): Mute video by default.
+
+loop (boolean, optional, default: false): Loop video.
+
+styles (object, optional):
+
+container: Main video card container.
+
+video: Styles for the <video> element.
+
+overlay: Styles for the text overlay on the video.
+
+title: Video title.
+
+description: Video description.
+
+button: AdLinkButton styles.
+
+ReferralBanner
+Purpose: Encourages users to refer friends.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "ReferralBanner"
+
+icon (string, optional, default: "🤝"): An emoji or character for the icon.
+
+title (string): Main title (e.g., "Invite Friends, Get $5 Each!").
+
+description (string): Description of the referral program.
+
+linkUrl (string, optional): URL to the referral program page.
+
+ctaText (string, optional, default: "Invite Friends"): CTA button text.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the banner.
+
+height (string, default: "auto"): Height of the banner.
+
+styles (object, optional):
+
+container: Main banner container.
+
+icon: Styles for the emoji/icon.
+
+title: Banner title.
+
+description: Banner description.
+
+button: AdLinkButton styles.
+
+BrandStripCarousel
+Purpose: Displays a horizontally scrolling strip of brand logos, often for popular restaurant chains or grocery brands.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "BrandStripCarousel"
+
+brands (array of objects, required):
+
+name (string): Brand name.
+
+logoUrl (string): URL of the brand logo.
+
+linkUrl (string): URL the brand links to.
+
+logoSize (object, optional):
+
+width (string, default: "80px"): Width of the brand logo image.
+
+height (string, default: "60px"): Height of the brand logo image.
+
+showBrandName (boolean, optional, default: true): Whether to display the brand name below the logo.
+
+autoScrollIntervalMs (number, optional): Interval in milliseconds for auto-scrolling.
+
+styles (object, optional):
+
+container: Main carousel container.
+
+brandItem: Styles for each individual brand item card.
+
+logo: Styles for the AdImage logo.
+
+brandName: Styles for the brand name text.
+
+CoinsCashbackPromo
+Purpose: Promotes loyalty points, cashback, or similar reward programs.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "CoinsCashbackPromo"
+
+icon (string, optional, default: "💰"): An emoji or character for the icon.
+
+title (string): Main title (e.g., "Earn 2X Loyalty Points!").
+
+description (string): Description of the offer.
+
+linkUrl (string, optional): URL to the loyalty program page.
+
+ctaText (string, optional, default: "Earn Now"): CTA button text.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the banner.
+
+height (string, default: "auto"): Height of the banner.
+
+styles (object, optional):
+
+container: Main banner container.
+
+icon: Styles for the emoji/icon.
+
+title: Banner title.
+
+description: Banner description.
+
+button: AdLinkButton styles.
+
+CouponCodeBanner
+Purpose: Displays a coupon code with a copy-to-clipboard function and a call-to-action.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "CouponCodeBanner"
+
+message (string): Introductory message (e.g., "Your exclusive code:").
+
+couponCode (string, required): The actual coupon code.
+
+linkUrl (string, optional): URL to apply the coupon or go to checkout.
+
+ctaText (string, optional, default: "Apply Now"): CTA button text.
+
+copyButtonText (string, optional, default: "Copy"): Text for the copy button.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the banner.
+
+height (string, default: "auto"): Height of the banner.
+
+styles (object, optional):
+
+container: Main banner container.
+
+message: Styles for the introductory message.
+
+codeContainer: Container for the coupon code and copy button.
+
+couponCodeText: Styles for the coupon code text.
+
+copyButton: Styles for the copy button.
+
+button: AdLinkButton styles.
+
+Note: Uses alert() for copy confirmation. For production, replace with a custom modal or toast notification.
+
+TopCategoryCTA
+Purpose: A simple, prominent call-to-action banner for a specific category.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "TopCategoryCTA"
+
+ctaText (string): The call-to-action message (e.g., "Sweet Cravings? Explore Our Dessert Menu!").
+
+linkUrl (string): URL the CTA links to.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the banner.
+
+height (string, default: "auto"): Height of the banner.
+
+styles (object, optional):
+
+container: Main banner container.
+
+ctaText: Styles for the CTA text.
+
+ShoppableVideoAd
+Purpose: Embeds a video where specific products shown in the video can be directly added to the cart or viewed.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "ShoppableVideoAd"
+
+videoUrl (string): URL of the video file.
+
+thumbnailUrl (string, optional): URL for the video poster image.
+
+title (string): Title for the video ad.
+
+description (string, optional): Short description.
+
+linkUrl (string, optional): General CTA link.
+
+ctaText (string, optional, default: "Shop All"): General CTA button text.
+
+products (array of objects, optional): List of shoppable products.
+
+name (string): Product name.
+
+linkUrl (string): URL to the product page.
+
+size (object, optional):
+
+width (string, default: "320px"): Width of the video player.
+
+height (string, default: "auto"): Height of the video player.
+
+autoPlay (boolean, optional, default: false): Autoplay video.
+
+muted (boolean, optional, default: false): Mute video by default.
+
+loop (boolean, optional, default: false): Loop video.
+
+styles (object, optional):
+
+container: Main video card container.
+
+video: Styles for the <video> element.
+
+overlay: Styles for the text overlay.
+
+title: Video title.
+
+description: Video description.
+
+productLinksContainer: Container for shoppable product links.
+
+productLink: Styles for individual product links.
+
+button: AdLinkButton styles.
+
+GamifiedAd
+Purpose: An interactive ad designed to engage users with a game-like element (e.g., "Spin to Win").
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "GamifiedAd"
+
+title (string): Main title (e.g., "Spin for a FREE Dessert!").
+
+description (string): Description of the game/offer.
+
+ctaText (string, optional, default: "Spin to Win!"): Text for the game button.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the ad.
+
+height (string, default: "auto"): Height of the ad.
+
+styles (object, optional):
+
+container: Main ad container.
+
+title: Ad title.
+
+description: Ad description.
+
+button: Styles for the game button.
+
+Note: The onClick currently uses alert(). In a real application, this would trigger actual game logic (e.g., a modal with a spinning wheel).
+
+ScrollInterstitialCard
+Purpose: A card that appears as the user scrolls, designed to grab attention with a prominent offer.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "ScrollInterstitialCard"
+
+title (string): Main title (e.g., "Exclusive Deals Just for You!").
+
+description (string): Description of the offer.
+
+linkUrl (string, optional): URL for the CTA.
+
+ctaText (string, optional, default: "Explore Now"): CTA button text.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the card.
+
+height (string, default: "auto"): Height of the card.
+
+styles (object, optional):
+
+container: Main card container.
+
+title: Card title.
+
+description: Card description.
+
+button: AdLinkButton styles.
+
+StickyBottomBanner
+Purpose: A banner that sticks to the bottom of the viewport, often used for persistent offers or flash sales.
+
+adData Properties:
+
+id (string): Unique identifier.
+
+type (string): "StickyBottomBanner"
+
+offerText (string): The offer message.
+
+linkUrl (string, optional): URL for the CTA.
+
+ctaText (string, optional, default: "Shop Now!"): CTA button text.
+
+size (object, optional):
+
+width (string, default: "full"): Width of the banner.
+
+height (string, default: "auto"): Height of the banner.
+
+styles (object, optional):
+
+container: Main banner container.
+
+offerText: Styles for the offer message.
+
+button: AdLinkButton styles.
+
+Note: This component is typically rendered outside the main AdContainer's default wrapper because it needs a fixed or sticky position, which is usually handled at a higher level in the component tree (e.g., directly in App.jsx).
+
+5. Tailwind CSS Custom Animations
+For the animations like animate-pulse-subtle, animate-bounce-subtle, animate-fadeInScale, animate-float, animate-fadeInUp, and animate-slide-up to work, you need to extend your Tailwind CSS configuration in tailwind.config.js.
+
+Add the following to your tailwind.config.js file:
+
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      keyframes: {
+        'pulse-subtle': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.01)' }, // Very slight pulse
+        },
+        'bounce-subtle': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' }, // Subtle bounce
+        },
+        'fadeInScale': {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        'fadeInUp': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-up': {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
+        'bounce-subtle': 'bounce-subtle 2s infinite ease-in-out',
+        'fadeInScale': 'fadeInScale 0.7s ease-out forwards',
+        'float': 'float 4s ease-in-out infinite',
+        'fadeInUp': 'fadeInUp 0.6s ease-out forwards',
+        'slide-up': 'slide-up 0.5s ease-out forwards',
+      },
+    },
+  },
+  plugins: [],
+}
+
+6. Best Practices & Tips
+Image Optimization: Always use optimized images for your ads. Large image files can significantly slow down your application's loading time. Consider using image CDNs or modern formats like WebP.
+
+Placeholder Images: The AdImage component handles broken image URLs by displaying a placeholder. Ensure your onErrorText is descriptive.
+
+Responsive Design: While height: "auto" helps, always test your ads on various screen sizes (mobile, tablet, desktop) to ensure they look and function correctly. Use Tailwind's responsive prefixes (sm:, md:, lg:) in className for fine-grained control.
+
+Accessibility: Provide meaningful alt text for all images and aria-label for interactive elements (like carousel buttons) to ensure your ads are accessible to all users.
+
+Custom Modals/Toasts: As noted in the CouponCodeBanner and GamifiedAd components, avoid using native alert() for user feedback. Implement custom modal or toast notification components for a more integrated and user-friendly experience.
+
+Dynamic Content: If your homepageConfig.json is fetched from an API, ensure proper loading states (e.g., showing a spinner) and error handling are implemented in your parent component.
+
+Performance: For carousels with many items, consider implementing lazy loading for images if performance becomes an issue.
+
+This comprehensive documentation should provide you with all the necessary details to effectively use, customize, and extend your AdContainer component.

@@ -1,0 +1,455 @@
+[
+  {
+    "id": "ad_full_width_top_promo",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_full_width_new_restaurants",
+      "type": "FullWidthStaticBanner",
+      "imageUrl": "https://images.unsplash.com/photo-1504674900247-087700206ce7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "altText": "Craving Something New? Discover Top Restaurants!",
+      "linkUrl": "#restaurants/new",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "borderRadius": "12px", "overflow": "hidden", "boxShadow": "0 8px 16px rgba(0,0,0,0.2)" },
+        "image": { "objectFit": "cover", "filter": "brightness(0.9)" }
+      }
+    }
+  },
+  {
+    "id": "ad_carousel_daily_deals",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_carousel_daily_deals_food",
+      "type": "HorizontalBannerCarousel",
+      "banners": [
+        {
+          "imageUrl": "https://images.unsplash.com/photo-1563227814-a7491d9f4c3a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "altText": "Burger Bonanza - Buy 1 Get 1 Free!",
+          "linkUrl": "#deals/burger-bogo"
+        },
+        {
+          "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7c177b965?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "altText": "Dessert Delights - 30% Off!",
+          "linkUrl": "#deals/desserts"
+        },
+        {
+          "imageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a04225?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "altText": "Pasta Perfection - New Dishes!",
+          "linkUrl": "#category/pasta"
+        }
+      ],
+      "size": { "width": "100%", "height": "auto" },
+      "autoScrollIntervalMs": 4000,
+      "styles": {
+        "container": { "borderRadius": "12px", "boxShadow": "0 6px 12px rgba(0,0,0,0.2)" },
+        "image": { "filter": "brightness(0.95)" },
+        "navButton": { "backgroundColor": "rgba(0,0,0,0.6)", "color": "white", "padding": "8px", "borderRadius": "50%" },
+        "dotIndicator": { "activeColor": "#FFD700", "inactiveColor": "#A9A9A9" }
+      }
+    }
+  },
+  {
+    "id": "ad_category_product_carousel_summer_fruits",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_category_product_carousel_summer_fruits",
+      "type": "CategoryProductCarousel",
+      "title": "Summer Fruits & Veggies",
+      "items": [
+        { "name": "", "imageUrl": "https://images.unsplash.com/photo-1749740607778-c732f4b38eb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMXx8fGVufDB8fHx8fA%3D%3D", "linkUrl": "#category/mangoes" },
+        { "name": "Watermelon", "imageUrl": "https://images.unsplash.com/photo-1582979203308-41718045952c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "linkUrl": "#category/watermelon", "price": "$1.50/kg" },
+        { "name": "Strawberries", "imageUrl": "https://images.unsplash.com/photo-1590779033335-d28c8942b083?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "linkUrl": "#category/strawberries", "price": "$4.50/pack" },
+        { "name": "Grapes", "imageUrl": "https://images.unsplash.com/photo-1591047139829-d91fc9588945?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "linkUrl": "#category/grapes", "price": "$2.75/kg" },
+        { "name": "Corn", "imageUrl": "https://images.unsplash.com/photo-1582979203308-41718045952c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "linkUrl": "#category/corn", "price": "$0.99/ea" }
+      ],
+      "itemsPerView": 1,
+      "itemSize": { "width": "90%", "height": "170px" },
+      "imageSize": { "width": "100%", "height": "100%" },
+      "styles": {
+        "container": { "backgroundColor": "#F8F8FF", "borderRadius": "15px", "padding": "10px 0" },
+        "title": { "color": "#4CAF50", "fontSize": "1.4rem", "paddingLeft": "1rem" },
+        "carouselTrack": { "paddingLeft": "1rem", "paddingRight": "1rem" },
+        "itemCard": { "backgroundColor": "white", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)", "borderRadius": "12px", "border": "1px solid #E0E0E0" },
+        "itemImage": { "borderRadius": "8px" },
+        "itemName": { "color": "#333", "fontSize": "0.9rem", "fontWeight": "600" },
+        "itemPrice": { "color": "#2E8B57", "fontSize": "0.85rem", "fontWeight": "bold" },
+        "navButtonLeft": { "left": "0px", "backgroundColor": "rgba(255,255,255,0.9)", "color": "#333", "borderTopRightRadius": "8px", "borderBottomRightRadius": "8px", "boxShadow": "2px 0 5px rgba(0,0,0,0.1)" },
+        "navButtonRight": { "right": "0px", "backgroundColor": "rgba(255,255,255,0.9)", "color": "#333", "borderTopLeftRadius": "8px", "borderBottomLeftRadius": "8px", "boxShadow": "-2px 0 5px rgba(0,0,0,0.1)" }
+      }
+    }
+  },
+  {
+    "id": "ad_themed_promo_grid_raksha_bandhan",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_themed_promo_grid_raksha_bandhan",
+      "type": "ThemedPromoGrid",
+      "mainTitle": "Get Ready for",
+      "subtitle": "Raksha Bandhan",
+      "categories": [
+        { "name": "Rakhi Store", "imageUrl": "https://i.ibb.co/C06112C/rakhi-store.png", "linkUrl": "#store/rakhi" },
+        { "name": "Mithai & Chocolates", "imageUrl": "https://i.ibb.co/9h5768S/mithai-chocolates.png", "linkUrl": "#category/mithai-chocolates" },
+        { "name": "Gifting Store", "imageUrl": "https://i.ibb.co/nC2L112/gifting-store.png", "linkUrl": "#store/gifting" }
+      ],
+      "imageSize": { "width": "120px", "height": "120px" },
+      "poweredBy": "Cadbury",
+      "styles": {
+        "container": { "background": "linear-gradient(to bottom, #8B0000, #B22222)", "color": "white", "padding": "20px", "borderRadius": "15px", "boxShadow": "0 10px 20px rgba(0,0,0,0.3)" },
+        "mainTitle": { "fontSize": "1.2rem", "fontWeight": "normal", "textTransform": "uppercase", "letterSpacing": "2px" },
+        "subtitle": { "fontSize": "2.5rem", "fontFamily": "cursive", "color": "#FFD700", "textShadow": "2px 2px 4px rgba(0,0,0,0.5)" },
+        "categoryCard": { "backgroundColor": "rgba(255,255,255,0.9)", "borderRadius": "10px", "padding": "15px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)", "border": "1px solid #FFD700" },
+        "categoryImage": { "borderRadius": "50%" },
+        "categoryName": { "color": "#8B0000", "fontSize": "1.1rem", "fontWeight": "bold" },
+        "poweredBy": { "color": "rgba(255,255,255,0.8)", "fontSize": "0.9rem" },
+        "poweredByBrand": { "color": "#FFD700" }
+      }
+    }
+  },
+  {
+    "id": "ad_product_highlight_meals_in_minutes",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_product_highlight_meals_in_minutes",
+      "type": "ProductHighlightBanner",
+      "imageUrl": "https://i.ibb.co/h1G3K1Q/meals-in-minutes.png",
+      "altText": "Meals in Minutes - Up to 35% Off",
+      "title": "Meals in Minutes",
+      "subtitle": "UP TO 35% OFF",
+      "linkUrl": "#category/ready-meals",
+      "ctaText": "Order now",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "borderRadius": "15px", "boxShadow": "0 8px 16px rgba(0,0,0,0.25)" },
+        "innerContainer": { "padding": "2rem" },
+        "image": { "filter": "brightness(0.7)" },
+        "overlay": { "background": "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2), transparent)" },
+        "contentArea": { "maxWidth": "55%" },
+        "title": { "color": "white", "fontSize": "2.5rem", "textShadow": "2px 2px 4px rgba(0,0,0,0.5)" },
+        "subtitle": { "color": "#FFD700", "fontSize": "1.5rem", "fontWeight": "bold" },
+        "button": { "backgroundColor": "#FF8C00", "color": "white", "borderRadius": "8px", "fontWeight": "bold", "boxShadow": "0 4px 8px rgba(0,0,0,0.2)" }
+      }
+    }
+  },
+  {
+    "id": "ad_restaurant_pizza_hub_featured",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "rest_pizza_hub_featured",
+      "type": "RestaurantCardAd",
+      "label": "Featured Partner",
+      "restaurant": {
+        "id": "rest_pizza_hub",
+        "name": "Pizza Hub Express",
+        "imageUrl": "https://images.unsplash.com/photo-1604382164759-0f622d17d56b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "cuisine": "Italian, Fast Food",
+        "rating": 4.5,
+        "reviewsCount": 580,
+        "deliveryTime": "30-45 min",
+        "deliveryFee": "Free",
+        "linkUrl": "#restaurant/pizza-hub-express"
+      },
+      "offerText": "Flat 20% off on all pizzas!",
+      "ctaText": "View Menu",
+      "styles": {
+        "container": { "backgroundColor": "#E0FFFF", "boxShadow": "0 4px 8px rgba(0,0,0,0.15)", "borderRadius": "10px" },
+        "badge": { "backgroundColor": "#00CED1", "color": "white" },
+        "title": { "color": "#008B8B", "fontSize": "1.3rem" },
+        "cuisine": { "color": "#4682B4" },
+        "infoArea": { "color": "#2F4F4F" },
+        "ratingText": { "color": "#FFD700" },
+        "deliveryTime": { "color": "#4CAF50" },
+        "deliveryFee": { "color": "#4CAF50", "fontWeight": "bold" },
+        "offerText": { "color": "#DC143C", "fontSize": "1rem", "fontWeight": "bold" },
+        "button": { "backgroundColor": "#00BFFF", "color": "white", "borderRadius": "8px" }
+      }
+    }
+  },
+  {
+    "id": "ad_offer_free_delivery_strip",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_offer_free_delivery",
+      "type": "OfferTagStrip",
+      "offerText": "Enjoy FREE Delivery on your next 3 orders!",
+      "couponCode": "FREEDELIVERY",
+      "linkUrl": "#promo/free-delivery",
+      "ctaText": "Activate Now",
+      "size": { "width": "auto", "height": "auto" },
+      "styles": {
+        "container": { "background": "linear-gradient(to right, #66BB6A, #4CAF50)", "borderColor": "#4CAF50", "color": "white", "padding": "15px", "borderRadius": "8px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)" },
+        "offerText": { "fontSize": "0.95rem", "fontWeight": "bold" },
+        "couponCode": { "backgroundColor": "#A5D6A7", "color": "#2E7D32", "borderRadius": "5px", "fontWeight": "bold" },
+        "button": { "backgroundColor": "white", "color": "#4CAF50", "fontWeight": "bold" }
+      }
+    }
+  },
+  {
+    "id": "ad_deal_family_meal_promo",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_deal_family_meal_promo",
+      "type": "DealBundleAd",
+      "label": "Limited Time Offer",
+      "imageUrl": "https://images.unsplash.com/photo-1512621776951-a573902a7b69?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "title": "Family Feast Bundle (Serves 4)",
+      "description": "Includes 2 large pizzas, 1 garlic bread, and a 2L soda.",
+      "price": "$34.99",
+      "originalPrice": "$45.00",
+      "offerDetails": [
+        "Save $10.01!",
+        "Perfect for family dinner",
+        "Customizable pizza toppings"
+      ],
+      "linkUrl": "#deals/family-feast",
+      "ctaText": "Get This Deal",
+      "styles": {
+        "container": { "backgroundColor": "#F0FFF0", "borderRadius": "15px", "padding": "10px", "boxShadow": "0 4px 10px rgba(0,0,0,0.1)" },
+        "badge": { "backgroundColor": "#228B22", "color": "white" },
+        "image": { "borderRadius": "10px" },
+        "title": { "color": "#2E8B57", "fontSize": "1.2rem" },
+        "description": { "color": "#6B8E23" },
+        "price": { "color": "#8B0000", "fontSize": "1.8rem" },
+        "originalPrice": { "color": "#A9A9A9" },
+        "offerDetailsList": { "color": "#3CB371" },
+        "offerDetailItem": { "marginBottom": "5px" },
+        "button": { "backgroundColor": "#32CD32", "color": "white", "fontWeight": "bold", "borderRadius": "8px" }
+      }
+    }
+  },
+  {
+    "id": "ad_category_grid_cuisine_explore",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_category_grid_cuisine",
+      "type": "CategoryIconGrid",
+      "categories": [
+        { "name": "Pizza", "iconUrl": "https://cdn-icons-png.flaticon.com/512/3132/3132692.png", "linkUrl": "#cuisine/pizza" },
+        { "name": "Burgers", "iconUrl": "https://cdn-icons-png.flaticon.com/512/2855/2855581.png", "linkUrl": "#cuisine/burgers" },
+        { "name": "Indian", "iconUrl": "https://cdn-icons-png.flaticon.com/512/3067/3067756.png", "linkUrl": "#cuisine/indian" },
+        { "name": "Chinese", "iconUrl": "https://cdn-icons-png.flaticon.com/512/5730/5730173.png", "linkUrl": "#cuisine/chinese" },
+        { "name": "Desserts", "iconUrl": "https://cdn-icons-png.flaticon.com/512/3050/3050474.png", "linkUrl": "#cuisine/desserts" },
+        { "name": "Healthy", "iconUrl": "https://cdn-icons-png.flaticon.com/512/5730/5730164.png", "linkUrl": "#cuisine/healthy" }
+      ],
+      "iconSize": { "width": "70px", "height": "70px" },
+      "styles": {
+        "container": { "backgroundColor": "#F8F8FF", "padding": "20px", "borderRadius": "10px", "boxShadow": "0 2px 8px rgba(0,0,0,0.1)" },
+        "categoryItem": { "backgroundColor": "white", "borderRadius": "8px", "boxShadow": "0 2px 4px rgba(0,0,0,0.05)" },
+        "icon": { "filter": "drop-shadow(2px 2px 2px rgba(0,0,0,0.2))" },
+        "categoryName": { "color": "#36454F", "fontWeight": "600" }
+      }
+    }
+  },
+  {
+    "id": "ad_video_behind_scenes_promo",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_video_behind_scenes",
+      "type": "VideoAdCard",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1551632436-cbf8dd35ba34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "title": "A Day in Our Kitchen",
+      "description": "See how we prepare your favorite dishes with fresh ingredients!",
+      "linkUrl": "#about/kitchen-tour",
+      "ctaText": "Watch Now",
+      "size": { "width": "320px", "height": "auto" },
+      "controls": true,
+      "autoPlay": false,
+      "muted": true,
+      "styles": {
+        "container": { "borderRadius": "10px", "border": "3px solid #FF6347" },
+        "overlay": { "backgroundColor": "rgba(0,0,0,0.7)", "padding": "15px" },
+        "title": { "color": "#FFD700", "fontSize": "1.2rem" },
+        "description": { "color": "#E0FFFF" },
+        "button": { "backgroundColor": "#FF4500", "color": "white" }
+      }
+    }
+  },
+  {
+    "id": "ad_referral_invite_friends_banner",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_referral_invite_friends",
+      "type": "ReferralBanner",
+      "icon": "🎉",
+      "title": "Invite Friends, Get $5 Each!",
+      "description": "Share your unique code and earn credits on their first order.",
+      "linkUrl": "#referral-program",
+      "ctaText": "Invite Now",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "backgroundColor": "#90EE90", "color": "#1A521A", "borderRadius": "10px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)" },
+        "icon": { "fontSize": "2.5rem" },
+        "title": { "color": "#006400", "fontSize": "1.2rem" },
+        "description": { "color": "#3CB371" },
+        "button": { "backgroundColor": "#32CD32", "color": "white", "borderRadius": "8px" }
+      }
+    }
+  },
+  {
+    "id": "ad_brand_carousel_popular_chains",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_brand_carousel_popular",
+      "type": "BrandStripCarousel",
+      "brands": [
+        { "name": "KFC", "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/KFC_logo.svg/100px-KFC_logo.svg.png", "linkUrl": "#brand/kfc" },
+        { "name": "McDonald's", "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/100px-McDonald%27s_Golden_Arches.svg.png", "linkUrl": "#brand/mcdonalds" },
+        { "name": "Subway", "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Subway_logo_2016.svg/100px-Subway_logo_2016.svg.png", "linkUrl": "#brand/subway" },
+        { "name": "Domino's", "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/100px-Domino%27s_pizza_logo.svg.png", "linkUrl": "#brand/dominos" },
+        { "name": "Starbucks", "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/100px-Starbucks_Corporation_Logo_2011.svg.png", "linkUrl": "#brand/starbucks" }
+      ],
+      "logoSize": { "width": "80px", "height": "60px" },
+      "showBrandName": true,
+      "autoScrollIntervalMs": 3000,
+      "styles": {
+        "container": { "backgroundColor": "#F5F5F5", "padding": "10px 0", "borderRadius": "10px" },
+        "brandItem": { "backgroundColor": "white", "boxShadow": "0 2px 5px rgba(0,0,0,0.1)", "margin": "0 8px", "borderRadius": "8px" },
+        "logo": { "filter": "drop-shadow(1px 1px 1px rgba(0,0,0,0.1))" },
+        "brandName": { "color": "#555555", "fontWeight": "bold" }
+      }
+    }
+  },
+  {
+    "id": "ad_coins_cashback_loyalty_points_banner",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_cashback_loyalty_points",
+      "type": "CoinsCashbackPromo",
+      "icon": "🌟",
+      "title": "Earn 2X Loyalty Points Today!",
+      "description": "Order from any restaurant and get double points.",
+      "linkUrl": "#loyalty-program",
+      "ctaText": "Start Earning",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "backgroundColor": "#FFD700", "color": "#8B4513", "borderRadius": "10px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)" },
+        "icon": { "fontSize": "2.5rem" },
+        "title": { "color": "#A0522D", "fontSize": "1.2rem" },
+        "description": { "color": "#CD853F" },
+        "button": { "backgroundColor": "#DAA520", "color": "white", "borderRadius": "8px" }
+      }
+    }
+  },
+  {
+    "id": "ad_coupon_weekend_feast_banner",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_coupon_weekend_feast",
+      "type": "CouponCodeBanner",
+      "message": "Your exclusive code for a weekend feast:",
+      "couponCode": "FEASTWEEKEND",
+      "linkUrl": "#checkout",
+      "ctaText": "Apply Now",
+      "copyButtonText": "Tap to Copy",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "background": "linear-gradient(to right, #4B0082, #8A2BE2)", "color": "white", "borderRadius": "10px", "padding": "20px", "boxShadow": "0 4px 10px rgba(0,0,0,0.15)" },
+        "message": { "fontSize": "1rem" },
+        "codeContainer": { "backgroundColor": "#F8F8FF", "padding": "10px", "borderRadius": "8px" },
+        "couponCodeText": { "color": "#4B0082", "fontSize": "1.8rem" },
+        "copyButton": { "backgroundColor": "#E0BBE4", "color": "#4B0082", "fontWeight": "bold", "borderRadius": "5px" },
+        "button": { "backgroundColor": "#FF69B4", "color": "white" }
+      }
+    }
+  },
+  {
+    "id": "ad_top_cta_desserts_promo",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_top_cta_desserts",
+      "type": "TopCategoryCTA",
+      "ctaText": "Sweet Cravings? Explore Our Dessert Menu!",
+      "linkUrl": "#category/desserts",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "background": "linear-gradient(to right, #FF7F50, #FF6347)", "borderRadius": "8px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)" },
+        "ctaText": { "fontSize": "1.1rem", "fontWeight": "bold", "textShadow": "1px 1px 2px rgba(0,0,0,0.3)" }
+      }
+    }
+  },
+  {
+    "id": "ad_shoppable_video_cooking_promo",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_shoppable_video_cooking",
+      "type": "ShoppableVideoAd",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "title": "Master the Art of Pasta Making",
+      "description": "Click on ingredients in the video to add them to your cart!",
+      "linkUrl": "#category/ingredients",
+      "ctaText": "Shop Ingredients",
+      "products": [
+        { "name": "Fresh Pasta", "linkUrl": "#product/fresh-pasta" },
+        { "name": "Tomato Sauce", "linkUrl": "#product/tomato-sauce" },
+        { "name": "Parmesan Cheese", "linkUrl": "#product/parmesan-cheese" }
+      ],
+      "size": { "width": "320px", "height": "auto" },
+      "autoPlay": true,
+      "muted": true,
+      "styles": {
+        "container": { "borderRadius": "10px", "border": "2px solid #FFD700", "boxShadow": "0 4px 10px rgba(0,0,0,0.15)" },
+        "overlay": { "backgroundColor": "rgba(0,0,0,0.7)", "padding": "10px" },
+        "title": { "color": "#FFD700", "fontSize": "1.1rem" },
+        "description": { "color": "#F0E68C" },
+        "productLinksContainer": { "gap": "5px" },
+        "productLink": { "backgroundColor": "#FFD700", "color": "#333", "borderRadius": "15px" },
+        "button": { "backgroundColor": "#FF8C00", "color": "white" }
+      }
+    }
+  },
+  {
+    "id": "ad_gamified_spin_food_main",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_gamified_spin_food",
+      "type": "GamifiedAd",
+      "title": "Spin for a FREE Dessert!",
+      "description": "Try your luck and win delicious treats from your favorite restaurants.",
+      "ctaText": "Spin Now",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "background": "linear-gradient(to right, #FF69B4, #BA55D3)", "borderRadius": "15px", "boxShadow": "0 8px 16px rgba(0,0,0,0.25)" },
+        "title": { "color": "white", "fontSize": "1.8rem", "textShadow": "2px 2px 4px rgba(0,0,0,0.4)" },
+        "description": { "color": "#F0F8FF" },
+        "button": { "backgroundColor": "#FFD700", "color": "#8B0000", "fontWeight": "bold", "boxShadow": "0 4px 8px rgba(0,0,0,0.3)", "borderRadius": "25px" }
+      }
+    }
+  },
+  {
+    "id": "ad_interstitial_scroll_deals_final",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_interstitial_scroll_deals",
+      "type": "ScrollInterstitialCard",
+      "title": "Exclusive Deals Just for You!",
+      "description": "Unlock personalized offers on your next food order.",
+      "linkUrl": "#deals/personalized",
+      "ctaText": "View My Deals",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "background": "linear-gradient(to bottom right, #4682B4, #6A5ACD)", "borderRadius": "12px", "boxShadow": "0 6px 12px rgba(0,0,0,0.2)" },
+        "title": { "color": "white", "fontSize": "1.8rem" },
+        "description": { "color": "#E0FFFF" },
+        "button": { "backgroundColor": "#ADD8E6", "color": "#4682B4", "borderRadius": "8px" }
+      }
+    }
+  },
+  {
+    "id": "ad_sticky_bottom_flash_delivery_fixed",
+    "component": "AdDisplay",
+    "adData": {
+      "id": "ad_sticky_bottom_flash_delivery",
+      "type": "StickyBottomBanner",
+      "offerText": "Limited Time: Flat $5 Off Your Next Order! Code: FOODIE5",
+      "linkUrl": "#flash-sale/food",
+      "ctaText": "Claim Now",
+      "size": { "width": "full", "height": "auto" },
+      "styles": {
+        "container": { "backgroundColor": "#FF4500", "color": "white", "fontWeight": "bold", "fontSize": "1rem" },
+        "offerText": { "color": "white" },
+        "button": { "backgroundColor": "#FFD700", "color": "#FF4500", "fontWeight": "bold" }
+      }
+    }
+  }
+]

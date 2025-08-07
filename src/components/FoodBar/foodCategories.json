@@ -1,0 +1,7 @@
+[
+  { "name": "All", "type": "all", "categories": ["all"], "icon": "AllIcon" },
+  { "name": "Kaayalu", "type": "vegetables", "categories": ["Fruity"], "icon": "FruityIcon" },
+  { "name": "Leafy", "type": "vegetables", "categories": ["leafy"], "icon": "LeafyIcon" },
+  { "name": "Dumpalu", "type": "vegetables", "categories": ["roots"], "icon": "TuberIcon" },
+  { "name": "Chili", "type": "vegetables", "categories": ["Chili", "roots", "leafy"], "icon": "ChiliIcon" }
+]

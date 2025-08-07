@@ -1,0 +1,181 @@
+{
+ "navbarSettings": {
+  "textColor": "white",
+  "textSize": "text-sm",
+  "orderDeliveryTextSize": "text-base",
+  "orderDeliveryTextColor": "white",
+  "addressTextColor": "white",
+  "addressTextSize": "text-sm",
+  "arrowColor": "balck"
+ },
+ "headerBackground": {
+  "type": "color",
+  "value": "#084518"
+ },
+   "foodBarCategories": [
+    { "name": "All", "type": "all", "categories": ["all"], "icon": "AllIcon" },
+    { "name": "Kaayalu", "type": "vegetables", "categories": ["Fruity"], "icon": "FruityIcon" },
+    { "name": "Leafy", "type": "vegetables", "categories": ["leafy"], "icon": "LeafyIcon" },
+    { "name": "Dumpalu", "type": "vegetables", "categories": ["roots"], "icon": "TuberIcon" },
+    { "name": "Chili", "type": "vegetables", "categories": ["Chili", "roots", "leafy"], "icon": "ChiliIcon" }
+  ],
+ "components": [
+      {
+      "component": "AdDisplay",
+      "adData": {
+        "type": "FullWidthStaticBanner",
+        "imageUrl": "https://www.solidbackgrounds.com/images/7680x4320/7680x4320-dark-green-solid-color-background.jpg",
+        "altText": "Biryani Feast - Buy One Get One Free!",
+        "linkUrl": "/offers/biryani-deal",
+        "size": {
+          "height": "150px"
+        },
+        "styles": {
+          "wrapper": {
+            "margin": "0rem",
+            "padding": "0rem"
+          },
+          "container": {
+            "borderRadius": "0px",
+            "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
+          }
+        }
+      }
+    },
+  {
+   "component": "ProductsFetch",
+   "category": {
+    "type": "vegetables",
+    "category": "roots"
+   },
+   "viewmore": "enable",
+   "viewmore_style": "bottom",
+   "add_button_color": "#2ecc71",
+   "card_border_radius": "10px",
+   "badge_color": "#e6ffe6",
+   "badge_text_color": "#16a34a",
+   "badge_text": "Free Delivery",
+   "product_limit": 5,
+   "products_per_row": null,
+   "card_size": "lg",
+   "card_style": "type_2",
+   "heading": "Fresh, Leafy Vegetables",
+   "layout_type": "horizontal",
+   "layout_theme": "highlighted",
+   "ad_image_url": "https://i.imgur.com/example-ad-image.jpg",
+   "product_container_style": "p-4 rounded-lg",
+   "product_container_background_color": "#e6ffe6"
+  },
+  {
+   "component": "ProductsFetch",
+   "category": {
+    "type": "vegetables",
+    "category": "Fruity"
+   },
+   "viewmore": "enable",
+   "viewmore_style": "bottom",
+   "add_button_color": "#2ecc71",
+   "card_border_radius": "10px",
+   "badge_color": "#e6ffe6",
+   "badge_text_color": "#16a34a",
+   "badge_text": "Free Delivery",
+   "product_limit": 5,
+   "products_per_row": null,
+   "card_size": "lg",
+   "card_style": "type_2",
+   "heading": "Fresh, Koora kayalu",
+   "layout_type": "horizontal",
+   "layout_theme": "normal"
+  },
+  {
+   "component": "ProductsFetch",
+   "category": {
+    "type": "vegetables",
+    "category": "Tuber"
+   },
+   "viewmore": "enable",
+   "viewmore_style": "bottom",
+   "add_button_color": "#2ecc71",
+   "card_border_radius": "10px",
+   "badge_color": "#e6ffe6",
+   "badge_text_color": "#16a34a",
+   "badge_text": "Free Delivery",
+   "product_limit": 5,
+   "products_per_row": null,
+   "card_size": "lg",
+   "card_style": "type_2",
+   "heading": "Fresh, Dumpalu",
+   "layout_type": "horizontal",
+   "layout_theme": "normal"
+  },
+  {
+   "component": "ProductsFetch",
+   "category": {
+    "type": "vegetables",
+    "nutrition": "vitaminC"
+   },
+   "viewmore": "enable",
+   "viewmore_style": "bottom",
+   "add_button_color": "#2ecc71",
+   "card_border_radius": "10px",
+   "badge_color": "#e6ffe6",
+   "badge_text_color": "#16a34a",
+   "badge_text": "High in Vitamin C",
+   "product_limit": 5,
+   "products_per_row": null,
+   "card_size": "lg",
+   "card_style": "type_2",
+   "heading": "High in Vitamin C",
+   "layout_type": "horizontal",
+   "layout_theme": "normal"
+  },
+  {
+   "component": "ProductsFetch",
+   "category": {
+    "type": "vegetables",
+    "season": true
+   },
+   "viewmore": "enable",
+   "viewmore_style": "top",
+   "add_button_color": "green",
+   "card_border_radius": "8px",
+   "badge_color": "#ffe6e6",
+   "badge_text_color": "#dc3545",
+   "badge_text": "In Season",
+   "products_per_row": 2,
+   "card_size": "md",
+   "card_style": "type_5",
+   "heading": "Seasonal Vegetables",
+   "layout_type": "vertical",
+   "layout_theme": "normal"
+  },
+  {
+   "component": "ProductsFetch",
+   "category": {
+    "type": "vegetables",
+    "category": "Leafy"
+   },
+   "viewmore": "enable",
+   "viewmore_style": "bottom",
+   "add_button_color": "#2ecc71",
+   "card_border_radius": "10px",
+   "badge_color": "#e6ffe6",
+   "badge_text_color": "#16a34a",
+   "badge_text": "Buy One Get One",
+   "product_limit": 5,
+   "products_per_row": 2,
+   "card_size": "lg",
+   "card_style": "type_2",
+   "heading": "Tropical Fruits",
+   "layout_type": "vertical",
+   "layout_theme": "highlighted",
+   "ad_image_url": "https://images.pexels.com/photos/7568294/pexels-photo-7568294.jpeg",
+    "ad_image_style": {
+  "height": "auto",
+  "width": "100%"
+ },
+   "product_container_style": "p-4 rounded-lg",
+   "product_container_background_color": "#F0F9E6"
+  }
+ ]
+}
